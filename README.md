@@ -1,34 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [wfc-wa.com](https://wfc-wa.com)管理リポジトリ
 
-## Getting Started
+このリポジトリは[wfc-wa.com](https://wfc-wa.com)のサイト開発リポジトリ兼ホストリポジトリになります｡
 
-First, run the development server:
+このソースコードよりビルドを行い､Vercel にてデプロイしています｡
+
+## ビルド状況
+
+## ローカル開発環境構築
+
+まず､依存パッケージをインストールしてください｡
+
+```bash
+npm install
+```
+
+.env.local ファイルをサンプルの通りに変更してください｡
+
+ローカルサーバーが起動できます｡
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 開発詳細
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+ソースコードは`src`以下に存在します｡
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### ブランチについて
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+`main`ブランチをサイトのビルドブランチとして使用しております｡
 
-## Learn More
+また､`dev`ブランチを開発用のブランチとし､開発しています｡
 
-To learn more about Next.js, take a look at the following resources:
+そのため､新たに変更を加えるときは`dev`ブランチより新たにブランチを作成し､開発を行ってください｡
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### TypeScript
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+このプロジェクトでは､TypeScript を採用しております｡
 
-## Deploy on Vercel
+型の宣言は全て`type`より行い､`interface`は抽象クラスとして使用してください｡
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+型を明示的にしなければならない時以外は､なるべく型推論を利用してください｡
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### デザイン設計
+
+ディレクトリ構成として､アトミックデザインを採用しています｡
+
+新規コンポーネントを作成する際は､そちらに沿って作成をお願いいたします｡
+
+### API
+
+API routes は無効化しています｡
+
+### Lint & Format
+
+ESLint によるリント､Prettier によるソースコードフォーマットを行っております｡
+
+特に Prettier については､vscode 使用時はファイル保存時に自動でフォーマットが行われるよう設定を行っております｡
+
+### Vercel
+
+このプロジェクトは Vercel にホストしています｡
+
+プルリクエストを送ると､Vercel によってプレビュー URL が発行され､閲覧することが出来ます｡
+
+## License
+
+このサイトのソースコードは[MIT ライセンス](https://opensource.org/licenses/MIT)によりライセンスされています｡
+
+外部ライブラリ等の使用によるライセンスの継承が発生した際は､そのライセンスを継承します｡
+
+ソースコードは､株式会社 Women's Future Center の許可を得た場合のみ､公開できます｡
+
+また､その他ロゴマーク等は､株式会社 Women's Future Center の著作権取り扱いが適用されます｡
+
+## Authors
+
+- [株式会社 Women's Future Center](https://wfc-wa.com)
+
+- Ryoichi Kurimoto ([ryone9re](https://github.com/ryone9re))
