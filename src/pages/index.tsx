@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
 
+import IndexTemplate from '../components/templates/IndexTemplate'
+
 const Index: NextPage = () => {
-  return <h1>Hello</h1>
+  return <IndexTemplate />
 }
 
 export default Index
