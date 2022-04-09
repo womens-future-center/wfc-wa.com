@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 import HamburgerButton from '../molecules/HamburgerButton'
 import HeaderLogo from '../molecules/HeaderLogo'
@@ -8,7 +9,11 @@ import styles from './styles/Header.module.css'
 const Header = () => {
   return (
     <header className={styles.header}>
-      <HeaderLogo />
+      <Link href='/' passHref>
+        <a>
+          <HeaderLogo />
+        </a>
+      </Link>
       <HamburgerButton
         onClick={() => {
           console.log('click!')
