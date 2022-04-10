@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+
 import BlogTemplate from '../components/templates/BlogTemplate'
 
 const Blog: NextPage = () => {

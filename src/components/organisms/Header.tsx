@@ -1,5 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
+import React from 'react'
 
 import HamburgerButton from '../molecules/HamburgerButton'
 import HeaderLogo from '../molecules/HeaderLogo'

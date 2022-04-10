@@ -1,5 +1,6 @@
-import React from 'react'
 import Link from 'next/link'
+import React from 'react'
+
 import Logo from '../atoms/Logo'
 
 import styles from './styles/HeaderLogo.module.css'
