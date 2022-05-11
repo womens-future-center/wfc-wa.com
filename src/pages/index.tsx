@@ -1,9 +1,9 @@
-import IndexTemplate from '../components/templates/IndexTemplate'
+import PageTemplate3 from '../components/templates/PageTemplate3'
 
 import type { NextPage } from 'next'
 
 const Index: NextPage = () => {
-  return <IndexTemplate />
+  return <PageTemplate3 />
 }
 
 export default Index
