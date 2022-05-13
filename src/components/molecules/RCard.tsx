@@ -1,26 +1,19 @@
 import Image from 'next/image'
-import React, { ReactNode } from 'react'
+import React from 'react'
+
+import { CardProps } from '../../types/types'
 
 const DEFAULT_IMAGE_HEIGHT = 1000
 
-type Props = {
-  imagePath: string
-  alt: string
-  header: string | ReactNode
-  content: string | ReactNode
-  imageWidth?: number
-  imageHeight?: number
-}
-
-const RCard = ({ imagePath, alt, header, content, imageWidth, imageHeight }: Props) => {
-  if (imageWidth === undefined && imageHeight == undefined) {
+const RCard = ({ imagePath, alt, title, content, imageWidth, imageHeight }: CardProps) => {
+  if (!imageWidth && !imageHeight) {
     imageHeight = DEFAULT_IMAGE_HEIGHT
     imageWidth = (imageHeight * 25) / 32
   } else {
-    if (imageWidth !== undefined) {
+    if (imageWidth) {
       imageHeight = (imageWidth * 32) / 25
     }
-    if (imageHeight !== undefined) {
+    if (imageHeight) {
       imageWidth = (imageHeight * 25) / 32
     }
   }
@@ -29,10 +22,10 @@ const RCard = ({ imagePath, alt, header, content, imageWidth, imageHeight }: Pro
       <div className='card w-full h-full flex flex-row bg-offwhite'>
         <div className='p-5 flex-1 flex flex-col align-center'>
           <div>
-            {typeof header === 'string' ? (
-              <h1 className='lg:text-2xl text-xs text-center'>{header}</h1>
+            {typeof title === 'string' ? (
+              <h1 className='lg:text-2xl text-xs text-center'>{title}</h1>
             ) : (
-              header
+              title
             )}
           </div>
           <div className='mt-3'>
