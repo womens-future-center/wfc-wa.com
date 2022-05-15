@@ -1,13 +1,17 @@
 import { NextPage } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 import Card from '../components/molecules/Card'
+import VerticalCard from '../components/molecules/VeriticalCard'
 import Footer from '../components/organisms/Footer'
 import Header from '../components/organisms/Header'
-import { BusinessLists } from '../temp/temp'
+import { useWindowSize } from '../hooks/useWindowSize'
+import { BusinessLists, Reviews } from '../temp/temp'
+import { TAILWIND_LG } from '../types/types'
 
-const IndexTemplate: NextPage = () => {
+const Index: NextPage = () => {
   return (
     <div className='bg-background'>
       <Header />
@@ -18,6 +22,7 @@ const IndexTemplate: NextPage = () => {
 }
 
 const Body = () => {
+  const { width } = useWindowSize()
   return (
     <>
       {/* Topの画像部 */}
@@ -54,23 +59,61 @@ const Body = () => {
           {BusinessLists.map((b, i) => {
             return (
               <div key={i} className='lg:p-16 p-8 xl:basis-5/12'>
-                <Card
-                  imagePath={b.imgPath}
-                  alt={b.title}
-                  title={b.title}
-                  content={b.content}
-                  // ディスプレイのサイズを取得し､その15%のサイズにする
-                  imageHeight={150}
-                />
+                <Card imagePath={b.imagePath} alt={b.title} title={b.title} content={b.content} />
               </div>
             )
           })}
         </div>
       </div>
       {/* お客様の声部 */}
+      <div className='flex flex-col justify-center items-center sm:px-10 px-3'>
+        <div className='lg:pb-16 pb-8 sm:my-10 mt-4'>
+          <h1 className='text-4xl font-medium subpixel-antialiased'>お客様の声</h1>
+        </div>
+        <div className='carousel w-full'>
+          {Reviews.slice(0, 5).map((o, i) => {
+            return (
+              <div key={i} id={'item' + String(i + 1)} className='carousel-item w-full h-[70vh]'>
+                {width > TAILWIND_LG ? (
+                  <Card imagePath={o.imagePath} alt={o.title} title={o.title} content={o.content} />
+                ) : (
+                  <VerticalCard
+                    imagePath={o.imagePath}
+                    alt={o.title}
+                    title={o.title}
+                    content={o.content}
+                  />
+                )}
+              </div>
+            )
+          })}
+        </div>
+        <div className='flex justify-center w-full my-4 gap-2'>
+          {Reviews.slice(0, 5).map((_, i) => {
+            return (
+              <Link key={i} href={'#item' + String(i + 1)} passHref={true}>
+                <a className='btn btn-xs'>{i + 1}</a>
+              </Link>
+            )
+          })}
+        </div>
+        {Reviews.length > 5 && (
+          <div>
+            <button className='btn btn-ghost'>もっと見る</button>
+          </div>
+        )}
+      </div>
       {/* お問い合わせ部 */}
+      <div className='flex flex-col justify-center items-center sm:px-10 px-3 sm:mb-20 mb-10'>
+        <div className='lg:pb-16 pb-8 sm:my-10 mt-4'>
+          <h1 className='text-4xl font-medium subpixel-antialiased'>お問い合わせ</h1>
+        </div>
+        <iframe src={process.env.INQUIRY_LINK} className='w-full' width={1000} height={1000}>
+          読み込んでいます…
+        </iframe>
+      </div>
     </>
   )
 }
 
-export default IndexTemplate
+export default Index
