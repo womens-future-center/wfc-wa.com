@@ -1,26 +1,47 @@
-import { BusinessList } from '../types/types'
+import { CardContent } from '../types/types'
 
-export const BusinessLists: BusinessList[] = [
+export const BusinessLists: CardContent[] = [
   {
-    imgPath: '/topImage.jpg',
+    imagePath: '/topImage.jpg',
     title: '商品1',
     content:
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
   },
   {
-    imgPath: '/topImage.jpg',
+    imagePath: '/topImage.jpg',
     title: '商品1',
     content:
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
   },
   {
-    imgPath: '/topImage.jpg',
+    imagePath: '/topImage.jpg',
     title: '商品1',
     content:
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
   },
   {
-    imgPath: '/topImage.jpg',
+    imagePath: '/topImage.jpg',
+    title: '商品1',
+    content:
+      '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
+  },
+]
+
+export const Reviews: CardContent[] = [
+  {
+    imagePath: '/topImage.jpg',
+    title: '商品1',
+    content:
+      '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
+  },
+  {
+    imagePath: '/topImage.jpg',
+    title: '商品1',
+    content:
+      '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
+  },
+  {
+    imagePath: '/topImage.jpg',
     title: '商品1',
     content:
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
