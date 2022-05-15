@@ -35,7 +35,6 @@ const testCards: CardProps[] = [
     title: '',
     content:
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
-    imageHeight: 100,
   },
   {
     imagePath: '/topImage.jpg',
@@ -43,7 +42,6 @@ const testCards: CardProps[] = [
     title: 'fff',
     content:
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
-    imageHeight: 100,
   },
   {
     imagePath: '/topImage.jpg',
@@ -51,7 +49,6 @@ const testCards: CardProps[] = [
     title: '',
     content:
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
-    imageHeight: 100,
   },
   {
     imagePath: '/topImage.jpg',
@@ -59,7 +56,6 @@ const testCards: CardProps[] = [
     title: 'fff',
     content:
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
-    imageHeight: 100,
   },
   {
     imagePath: '/topImage.jpg',
@@ -67,7 +63,6 @@ const testCards: CardProps[] = [
     title: 'fff',
     content:
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
-    imageHeight: 100,
   },
 ]
 
@@ -97,7 +92,6 @@ const Body1 = () => {
               <p className='lg:text-lg text-xs text-left break-all'>代表取締役社長　栗本恭子</p>
             </div>
           }
-          imageHeight={800}
         />
       </div>
     </>
@@ -130,7 +124,6 @@ const Body2 = () => {
               <p className='lg:text-lg text-xs text-left break-all'>代表取締役社長　栗本恭子</p>
             </div>
           }
-          imageHeight={800}
         />
       </div>
     </>
