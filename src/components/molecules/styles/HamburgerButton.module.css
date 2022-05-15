@@ -1,0 +1,8 @@
+.hamburgerbutton {
+  display: flex;
+  align-items: center;
+  padding: 3px 8px;
+  border: 1px solid #d1d9e6;
+  border-radius: 20%;
+  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff !important;
+}
