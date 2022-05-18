@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
+import { microCMSLoader } from '../../libs/microCMS'
 import { CardProps } from '../../types/types'
 
 const VerticalCard = ({
@@ -29,6 +30,7 @@ const VerticalCard = ({
       <div className='card lg:p-4 p-2 w-full flex flex-col bg-offwhite'>
         <div className='p-2'>
           <Image
+            loader={microCMSLoader}
             className='rounded-xl'
             src={imagePath}
             alt={alt}

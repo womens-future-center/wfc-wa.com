@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 
 import LOGO from '../../../public/logo.png'
+import { microCMSLoader } from '../../libs/microCMS'
 
 type Props = {
   width: number
@@ -10,7 +11,15 @@ type Props = {
 
 const Logo = ({ width, height }: Props) => {
   return (
-    <Image src={LOGO} title='WFCロゴ' alt='WFCロゴ' layout='fixed' width={width} height={height} />
+    <Image
+      loader={microCMSLoader}
+      src={LOGO}
+      title='WFCロゴ'
+      alt='WFCロゴ'
+      layout='fixed'
+      width={width}
+      height={height}
+    />
   )
 }
 

@@ -11,6 +11,7 @@ import VerticalCard from '../components/molecules/VeriticalCard'
 import PageTemplate from '../components/templates/PageTemplate'
 import UpMotionTemplate from '../components/templates/motions/UpMotionTemplate'
 import { useWindowSize } from '../hooks/useWindowSize'
+import { microCMSLoader } from '../libs/microCMS'
 import { cms } from '../libs/microCMS'
 import { achievement } from '../types/cms-types'
 import { TAILWIND_LG } from '../types/types'
@@ -68,6 +69,7 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
         }}
       >
         <Image
+          loader={microCMSLoader}
           className='absolute'
           src='/top_image.png'
           alt='Top image'
@@ -83,7 +85,14 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
       {/* 中段の指針部 */}
       <UpMotionTemplate>
         <div className='flex justify-center items-center bg-bggray p-10 relative'>
-          <Image src='/vector.png' alt='Shape' width='500' height='400' className='absolute' />
+          <Image
+            loader={microCMSLoader}
+            src='/vector.png'
+            alt='Shape'
+            width='500'
+            height='400'
+            className='absolute'
+          />
           <div className='2xl:w-1/2 lg:p-8 p-2 absolute'>
             <p className='xl:p-4 p-2 font-medium md:text-xl text-xs'>
               Women&apos;s Future

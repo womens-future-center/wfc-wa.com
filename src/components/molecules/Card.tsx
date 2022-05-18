@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
+import { microCMSLoader } from '../../libs/microCMS'
 import { CardProps } from '../../types/types'
 
 const Card = ({ imagePath, alt, title, content, isHtml, tag }: CardProps) => {
@@ -20,6 +21,7 @@ const Card = ({ imagePath, alt, title, content, isHtml, tag }: CardProps) => {
       <div className='card lg:p-10 p-3 w-full h-full flex flex-row bg-offwhite'>
         <div className='basis-1/3 relative justify-center align-center'>
           <Image
+            loader={microCMSLoader}
             className='rounded-xl'
             src={imagePath}
             alt={alt}

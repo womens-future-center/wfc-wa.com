@@ -1,5 +1,6 @@
 import { createClient } from 'microcms-js-sdk'
 import { MicroCMS } from 'microcms-lib'
+import { ImageLoaderProps } from 'next/image'
 
 import { EndPoints } from '../types/cms-types'
 
@@ -13,6 +14,6 @@ export const cms = new MicroCMS<EndPoints>({
   apiKey: process.env.X_MICROCMS_API_KEY!,
 })
 
-export const microCMSLoader = ({ src, width }: { src: string; width: string }) => {
+export const microCMSLoader = ({ src, width }: ImageLoaderProps) => {
   return `${src}?auto=format&fit=max&w=${width}`
 }
