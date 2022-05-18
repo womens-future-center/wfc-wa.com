@@ -42,12 +42,12 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
     <>
       {/* Topの画像部 */}
       <div className='flex justify-center items-center'>
-        <Image src='/topImage.jpg' alt='Top image' width='600' height='600' />
+        <Image src='/top_image.png' alt='トップイメージ' width='600' height='600' />
         <h1 className='md:text-4xl text-xs'>誰もが自由な働き方ができる社会へ</h1>
       </div>
       {/* 中段の指針部 */}
       <div className='h-3/5 flex justify-center items-center bg-bggray p-10 relative'>
-        <Image src='/Vector 2.png' alt='Shape' width='500' height='400' className='absolute' />
+        <Image src='/vector.png' alt='Shape' width='500' height='400' className='absolute' />
         <div className='2xl:w-5/12 w-11/12 absolute'>
           <p className='xl:p-4 p-2 font-medium lg:text-xl text-xs'>
             Women&apos;s Future
@@ -73,7 +73,7 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
               <a>
                 <Card
                   isHtml={false}
-                  imagePath='/topImage.jpg'
+                  imagePath='/system_development.png'
                   alt='システム開発イメージ'
                   title='システム開発・運用サポート'
                   content={
@@ -98,7 +98,7 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
               <a>
                 <Card
                   isHtml={false}
-                  imagePath='/topImage.jpg'
+                  imagePath='/blanding_image.png'
                   alt='ブランディングデザインイメージ'
                   title='ブランディングデザイン'
                   content={
