@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    loader: 'custom',
     domains: ['images.microcms-assets.io'],
   },
 }
