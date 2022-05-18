@@ -35,7 +35,7 @@ const VerticalCard = ({
             width={3}
             height={2}
             layout='responsive'
-            objectFit='cover'
+            objectFit='contain'
             priority={true}
           />
         </div>
