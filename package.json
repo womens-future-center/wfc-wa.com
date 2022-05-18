@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css}'",
@@ -20,6 +21,7 @@
     "microcms-js-sdk": "^2.0.0",
     "microcms-lib": "^1.0.4",
     "next": "^12.1.4",
+    "next-sitemap": "^2.5.20",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-intersection-observer": "^9.1.0"
