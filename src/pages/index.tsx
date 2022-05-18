@@ -1,27 +1,40 @@
-import { NextPage } from 'next'
+import { MicroCMSListResponse } from 'microcms-js-sdk'
+import { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 import Card from '../components/molecules/Card'
 import VerticalCard from '../components/molecules/VeriticalCard'
-import Footer from '../components/organisms/Footer'
-import Header from '../components/organisms/Header'
+import PageTemplate from '../components/templates/PageTemplate'
 import { useWindowSize } from '../hooks/useWindowSize'
-import { BusinessLists, Reviews } from '../temp/temp'
+import { cms } from '../libs/client'
+import { achievement } from '../types/cms-types'
 import { TAILWIND_LG } from '../types/types'
 
-const Index: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await cms.gets('achievement', {
+    limit: 6,
+    orders: '-createdAt',
+  })
+  const { totalCount, contents } = data!
+  return {
+    props: {
+      contents: contents,
+      totalCount: totalCount,
+    },
+  }
+}
+
+const Index: NextPage<MicroCMSListResponse<achievement>> = ({ contents, totalCount }) => {
   return (
-    <div className='bg-background'>
-      <Header />
-      <Body />
-      <Footer />
-    </div>
+    <PageTemplate>
+      <Body contents={contents} totalCount={totalCount} />
+    </PageTemplate>
   )
 }
 
-const Body = () => {
+const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: number }) => {
   const { width } = useWindowSize()
   return (
     <>
@@ -34,35 +47,91 @@ const Body = () => {
       <div className='h-3/5 flex justify-center items-center bg-bggray p-10 relative'>
         <Image src='/Vector 2.png' alt='Shape' width='500' height='400' className='absolute' />
         <div className='2xl:w-5/12 w-11/12 absolute'>
-          <p className='font-medium lg:text-xl text-xs'>
+          <p className='xl:p-4 p-2 font-medium lg:text-xl text-xs'>
             Women&apos;s Future
             Centerは、2014年6月に創業し、「女性が活躍できる環境と仕組みをつくる」という理念のもと、フリーランス女性のネットワークを築き、地域企業と女性を結び仕事の創出を行ってきました。
           </p>
-          <br />
-          <p className='font-medium lg:text-xl text-xs'>
+          <p className='xl:p-4 p-2 font-medium lg:text-xl text-xs'>
             2020年から地域に根ざした個人事業や企業の規模にあったシステムを構築し、運用までをサポートする中で、スモールビジネスの経営者の方の柔軟な考え方、チャレンジする精神にスモールビジネスの飛躍こそが地域の希望になると考えるようになりました。
           </p>
-          <br />
-          <p className='font-medium lg:text-xl text-xs'>
+          <p className='xl:p-4 p-2 font-medium lg:text-xl text-xs'>
             奈良には、素晴らしい企業がたくさんあり、魅力的な経営者の方がたくさんいます。私たちは、創業当初からの「働きたいと思った時に働ける環境と仕組みを作る」ことは変わらず、ジェンダーレスで誰もが輝く環境と仕組みをつくることに挑戦していきます。
           </p>
-          <br />
-          <p className='font-medium lg:text-xl text-xs'>代表取締役社長　栗本恭子</p>
+          <p className='xl:p-4 p-2 font-medium lg:text-xl text-xs'>代表取締役社長 栗本恭子</p>
         </div>
       </div>
       {/* 事業内容部 */}
       <div className='flex flex-col justify-center items-center sm:p-10 p-3'>
-        <div className='sm:my-10 mt-4'>
+        <div className='sm:my-10 my-4'>
           <h1 className='text-4xl font-medium subpixel-antialiased'>事業内容</h1>
         </div>
-        <div className='flex flex-row flex-wrap justify-center items-center'>
-          {BusinessLists.map((b, i) => {
-            return (
-              <div key={i} className='lg:p-16 p-8 xl:basis-5/12'>
-                <Card imagePath={b.imagePath} alt={b.title} title={b.title} content={b.content} />
-              </div>
-            )
-          })}
+        <div className='flex flex-row flex-wrap justify-center'>
+          <div className='p-2 md:basis-6/12'>
+            <Link href='/businesses/system_development' passHref={true}>
+              <a>
+                <Card
+                  isHtml={false}
+                  imagePath='/topImage.jpg'
+                  alt='システム開発イメージ'
+                  title='システム開発・運用サポート'
+                  content={
+                    <div className='flex flex-col justify-center items-center'>
+                      <p className='p-2 lg:text-xl text-base'>
+                        WFCシステムサービスは事業に沿った独自のシステムを構築し、運用までをサポートします。
+                      </p>
+                      <p className='p-2 lg:text-xl text-base'>
+                        事務処理をシステムで最適化し、在宅ワーカーを入れて仕組み化するサービスです。
+                      </p>
+                      <p className='p-2 lg:text-xl text-base'>
+                        IT知識がない方でも簡単に導入でき、売上アップに貢献します。
+                      </p>
+                    </div>
+                  }
+                />
+              </a>
+            </Link>
+          </div>
+          <div className='p-2 md:basis-6/12'>
+            <Link href='/businesses/branding_design' passHref={true}>
+              <a>
+                <Card
+                  isHtml={false}
+                  imagePath='/topImage.jpg'
+                  alt='ブランディングデザインイメージ'
+                  title='ブランディングデザイン'
+                  content={
+                    <div className='flex flex-col justify-center items-center'>
+                      <p className='p-2 lg:text-xl text-base'>
+                        ご依頼者の抱えるミッションに対して、商品やサービスのさらなる価値を見出し、事業目的に寄り添ったブランディングデザインを提供いたします。
+                      </p>
+                      <p className='p-2 lg:text-xl text-base'>
+                        また、提供のみならずその後の成果にもこだわることで、ミッションの達成度をより向上させます。
+                      </p>
+                    </div>
+                  }
+                />
+              </a>
+            </Link>
+          </div>
+          {/* <div className='p-2 md:basis-6/12'>
+            <Link href='/businesses/online_school' passHref={true}>
+              <a>
+                <Card
+                  isHtml={false}
+                  imagePath='/topImage.jpg'
+                  alt='オンラインスクールイメージ'
+                  title='オンラインスクール事業'
+                  content={
+                    <div className='flex flex-col justify-center items-center'>
+                      <p className='p-2 lg:text-xl text-base'>
+                        在宅ワーカーが知っておきたい仕事の知識を詰め込んだ無料で学べるスクールです。
+                      </p>
+                    </div>
+                  }
+                />
+              </a>
+            </Link>
+          </div> */}
         </div>
       </div>
       {/* お客様の声部 */}
@@ -71,25 +140,42 @@ const Body = () => {
           <h1 className='text-4xl font-medium subpixel-antialiased'>お客様の声</h1>
         </div>
         <div className='carousel w-full'>
-          {Reviews.slice(0, 5).map((o, i) => {
+          {contents.map((o, i) => {
             return (
-              <div key={i} id={'item' + String(i + 1)} className='carousel-item w-full h-[70vh]'>
-                {width > TAILWIND_LG ? (
-                  <Card imagePath={o.imagePath} alt={o.title} title={o.title} content={o.content} />
-                ) : (
-                  <VerticalCard
-                    imagePath={o.imagePath}
-                    alt={o.title}
-                    title={o.title}
-                    content={o.content}
-                  />
-                )}
+              <div key={o.id} id={'item' + String(i + 1)} className='carousel-item w-full h-[70vh]'>
+                <Link href={'/achievements/' + o.id} passHref={true}>
+                  <a className='w-full h-full'>
+                    {width > TAILWIND_LG ? (
+                      <Card
+                        isHtml
+                        imagePath={o.image.url}
+                        alt={o.title}
+                        title={o.title}
+                        content={
+                          o.context.length > 300 ? o.context.slice(0, 300) + '...' : o.context
+                        }
+                        tag={o.tag}
+                      />
+                    ) : (
+                      <VerticalCard
+                        isHtml
+                        imagePath={o.image.url}
+                        alt={o.title}
+                        title={o.title}
+                        content={
+                          o.context.length > 300 ? o.context.slice(0, 300) + '...' : o.context
+                        }
+                        tag={o.tag}
+                      />
+                    )}
+                  </a>
+                </Link>
               </div>
             )
           })}
         </div>
         <div className='flex justify-center w-full my-4 gap-2'>
-          {Reviews.slice(0, 5).map((_, i) => {
+          {[...Array(totalCount > 5 ? 5 : totalCount)].map((_, i) => {
             return (
               <Link key={i} href={'#item' + String(i + 1)} passHref={true}>
                 <a className='btn btn-xs'>{i + 1}</a>
@@ -97,11 +183,13 @@ const Body = () => {
             )
           })}
         </div>
-        {Reviews.length > 5 && (
-          <div>
-            <button className='btn btn-ghost'>もっと見る</button>
-          </div>
-        )}
+        <div>
+          <Link href='/achievements/page/1' passHref={true}>
+            <a>
+              <button className='btn btn-ghost'>もっと見る</button>
+            </a>
+          </Link>
+        </div>
       </div>
       {/* お問い合わせ部 */}
       <div className='flex flex-col justify-center items-center sm:px-10 px-3 sm:mb-20 mb-10'>

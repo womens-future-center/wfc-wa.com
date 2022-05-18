@@ -138,8 +138,6 @@ const Footer = () => {
                   <a className='text-gray-600'>有料職業紹介所WFCWorks</a>
                 </Link>
               </p>
-            </div>
-            <div className=''>
               <h6 className='uppercase font-semibold mb-4 flex justify-center md:justify-start'>
                 運営メディア
               </h6>
@@ -169,6 +167,21 @@ const Footer = () => {
               <p className='mb-4'>
                 <Link href='https://www.pref.nara.jp/49126.htm' passHref={true}>
                   <a className='text-gray-600'>なら女性活躍推進倶楽部</a>
+                </Link>
+              </p>
+            </div>
+            <div className=''>
+              <h6 className='uppercase font-semibold mb-4 flex justify-center md:justify-start'>
+                運営方針
+              </h6>
+              <p className='mb-4'>
+                <Link href='/terms' passHref={true}>
+                  <a className='text-gray-600'>利用規約</a>
+                </Link>
+              </p>
+              <p className='mb-4'>
+                <Link href='/privacy' passHref={true}>
+                  <a className='text-gray-600'>個人情報保護方針</a>
                 </Link>
               </p>
             </div>

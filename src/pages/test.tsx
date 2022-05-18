@@ -1,7 +1,6 @@
 import { NextPage } from 'next'
 
 import Card from '../components/molecules/Card'
-import CoupleCard from '../components/molecules/CoupleCard'
 import RCard from '../components/molecules/RCard'
 import PageTemplate from '../components/templates/PageTemplate'
 import ProfileTemplate from '../components/templates/ProfileTemplate'
@@ -15,6 +14,25 @@ const test: NextPage = () => {
         subtitle='グーグルスプレッドシートやエクセルで管理しているものをアプリ化したり、経理などのソフトと連動したりと、その事業主様に沿ったシステムの開発と運用サポートを行います。'
         cards={testCards}
       >
+        <div className='drawer drawer-end'>
+          <input id='my-drawer-4' type='checkbox' className='drawer-toggle' />
+          <div className='drawer-content'>
+            <label htmlFor='my-drawer-4' className='drawer-button btn btn-primary'>
+              Open drawer
+            </label>
+          </div>
+          <div className='drawer-side'>
+            <label htmlFor='my-drawer-4' className='drawer-overlay'></label>
+            <ul className='menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content'>
+              <li>
+                <a>Sidebar Item 1</a>
+              </li>
+              <li>
+                <a>Sidebar Item 2</a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <h1>uuuu</h1>
       </ProfileTemplate>
       <PageTemplate>
@@ -30,6 +48,7 @@ export default test
 
 const testCards: CardProps[] = [
   {
+    isHtml: false,
     imagePath: '/topImage.jpg',
     alt: 'alt',
     title: '',
@@ -37,6 +56,7 @@ const testCards: CardProps[] = [
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
   },
   {
+    isHtml: false,
     imagePath: '/topImage.jpg',
     alt: 'aaa',
     title: 'fff',
@@ -44,6 +64,7 @@ const testCards: CardProps[] = [
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
   },
   {
+    isHtml: false,
     imagePath: '/topImage.jpg',
     alt: 'alt',
     title: '',
@@ -51,6 +72,7 @@ const testCards: CardProps[] = [
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
   },
   {
+    isHtml: false,
     imagePath: '/topImage.jpg',
     alt: 'aaa',
     title: 'fff',
@@ -58,6 +80,7 @@ const testCards: CardProps[] = [
       '商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品商品',
   },
   {
+    isHtml: false,
     imagePath: '/topImage.jpg',
     alt: 'aaa',
     title: 'fff',
@@ -71,6 +94,7 @@ const Body1 = () => {
     <>
       <div className='p-20'>
         <Card
+          isHtml={false}
           imagePath='/topImage.jpg'
           alt='a'
           title={<h1 className='lg:text-4xl text-xs text-center'>事業内容</h1>}
@@ -89,7 +113,7 @@ const Body1 = () => {
                 奈良には、素晴らしい企業がたくさんあり、魅力的な経営者の方がたくさんいます。私たちは、創業当初からの「働きたいと思った時に働ける環境と仕組みを作る」ことは変わらず、ジェンダーレスで誰もが輝く環境と仕組みをつくることに挑戦していきます。
               </p>
               <br />
-              <p className='lg:text-lg text-xs text-left break-all'>代表取締役社長　栗本恭子</p>
+              <p className='lg:text-lg text-xs text-left break-all'>代表取締役社長 栗本恭子</p>
             </div>
           }
         />
@@ -103,6 +127,7 @@ const Body2 = () => {
     <>
       <div className='p-20'>
         <RCard
+          isHtml={false}
           imagePath='/topImage.jpg'
           alt='a'
           title={<h1 className='lg:text-4xl text-xs text-center'>事業内容</h1>}
@@ -121,7 +146,7 @@ const Body2 = () => {
                 奈良には、素晴らしい企業がたくさんあり、魅力的な経営者の方がたくさんいます。私たちは、創業当初からの「働きたいと思った時に働ける環境と仕組みを作る」ことは変わらず、ジェンダーレスで誰もが輝く環境と仕組みをつくることに挑戦していきます。
               </p>
               <br />
-              <p className='lg:text-lg text-xs text-left break-all'>代表取締役社長　栗本恭子</p>
+              <p className='lg:text-lg text-xs text-left break-all'>代表取締役社長 栗本恭子</p>
             </div>
           }
         />
@@ -133,9 +158,7 @@ const Body2 = () => {
 const Body3 = () => {
   return (
     <>
-      <div className='p-20'>
-        <CoupleCard />
-      </div>
+      <div className='p-20'>{/* <CoupleCard imagePath='' /> */}</div>
     </>
   )
 }

@@ -9,5 +9,19 @@ module.exports = {
       },
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [
+    require('daisyui'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
+  ],
+  daisyui: {
+    themes: [
+      {
+        light: {
+          ...require('daisyui/src/colors/themes')['[data-theme=light]'],
+          primary: '#112a88',
+        },
+      },
+    ],
+  },
 }

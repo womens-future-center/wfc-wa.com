@@ -14,11 +14,7 @@ const Header = () => {
           <HeaderLogo />
         </a>
       </Link>
-      <HamburgerButton
-        onClick={() => {
-          console.log('click!')
-        }}
-      />
+      <HamburgerButton onClick={() => {}} />
     </header>
   )
 }

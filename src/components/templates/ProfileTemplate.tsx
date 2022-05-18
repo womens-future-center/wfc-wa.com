@@ -8,7 +8,7 @@ import PageTemplate from './PageTemplate'
 
 type Props = {
   title: string | ReactNode
-  subtitle: string | ReactNode
+  subtitle?: string | ReactNode
   cards?: CardProps[]
 }
 
@@ -28,26 +28,26 @@ const ProfileTemplate: NextPage<Props> = ({ title, subtitle, cards, children }) 
   return (
     <PageTemplate>
       <div className='m-12 flex flex-col justify-center items-center'>
-        <div className='mb-8'>{titleWithComponent}</div>
-        <div className=''>{subtitleWithComponent}</div>
+        <div className=''>{titleWithComponent}</div>
+        {subtitle && <div className=''>{subtitleWithComponent}</div>}
       </div>
-      <div className='md:m-10 m-4 md:px-10 p-2 flex flex-row flex-wrap justify-center items-center'>
-        {cards?.length &&
-          cards.map((o, k) => {
+      {cards?.length && (
+        <div className='md:m-10 m-4 md:px-10 p-2 flex flex-row flex-wrap justify-center'>
+          {cards.map((o, k) => {
             return (
-              <div className='h-[50vh] p-5 xl:basis-1/4 sm:basis-1/2 basis-full' key={k}>
+              <div className='p-4 flex xl:basis-1/4 sm:basis-1/2 basis-full' key={k}>
                 <VerticalCard
+                  isHtml={false}
                   imagePath={o.imagePath}
                   alt={o.alt}
                   title={o.title}
                   content={o.content}
-                  imageHeight={o.imageHeight}
-                  imageWidth={o.imageWidth}
                 />
               </div>
             )
           })}
-      </div>
+        </div>
+      )}
       {children}
     </PageTemplate>
   )
