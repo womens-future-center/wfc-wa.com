@@ -94,11 +94,11 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
             </Link>
           </div>
           <div className='p-2 md:basis-6/12'>
-            <Link href='/businesses/branding_design' passHref={true}>
+            <Link href='/businesses/blanding_design' passHref={true}>
               <a>
                 <Card
                   isHtml={false}
-                  imagePath='/blanding_image.png'
+                  imagePath='/blanding_design.png'
                   alt='ブランディングデザインイメージ'
                   title='ブランディングデザイン'
                   content={
