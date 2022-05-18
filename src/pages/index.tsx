@@ -34,6 +34,8 @@ const Index: NextPage<MicroCMSListResponse<achievement>> = ({ contents, totalCou
   )
 }
 
+export default Index
+
 const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: number }) => {
   const { width } = useWindowSize()
   return (
@@ -203,5 +205,3 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
     </>
   )
 }
-
-export default Index
