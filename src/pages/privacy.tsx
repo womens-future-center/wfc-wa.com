@@ -1,13 +1,24 @@
 import { NextPage } from 'next'
+import Head from 'next/head'
 
 import CardNoImage from '../components/molecules/CardNoImage'
 import PageTemplate from '../components/templates/PageTemplate'
 
 const Privacy: NextPage = () => {
   return (
-    <PageTemplate>
-      <Body />
-    </PageTemplate>
+    <>
+      <Head>
+        <title>
+          女性起業支援のWomen&apos;s Future Center(ウィメンズフューチャーセンター) –
+          女性の起業支援を行うWomen&apos;s Future
+          Center。400名以上の女性ネットワーク会員が自主企画講座を開催!
+          在宅ワーカー支援事業も行っております｡
+        </title>
+      </Head>
+      <PageTemplate>
+        <Body />
+      </PageTemplate>
+    </>
   )
 }
 

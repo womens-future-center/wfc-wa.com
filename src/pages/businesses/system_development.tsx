@@ -1,11 +1,13 @@
 import { MicroCMSListResponse } from 'microcms-js-sdk'
 import { GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import Card from '../../components/molecules/Card'
 import VerticalCard from '../../components/molecules/VeriticalCard'
 import ProfileTemplate from '../../components/templates/ProfileTemplate'
+import UpMotionTemplate from '../../components/templates/motions/UpMotionTemplate'
 import { useWindowSize } from '../../hooks/useWindowSize'
 import { cms } from '../../libs/client'
 import { achievement } from '../../types/cms-types'
@@ -35,6 +37,14 @@ const SystemDevelopment: NextPage<MicroCMSListResponse<achievement>> = ({
   const { width } = useWindowSize()
   return (
     <>
+      <Head>
+        <title>
+          女性起業支援のWomen&apos;s Future Center(ウィメンズフューチャーセンター) –
+          女性の起業支援を行うWomen&apos;s Future
+          Center。400名以上の女性ネットワーク会員が自主企画講座を開催!
+          在宅ワーカー支援事業も行っております｡
+        </title>
+      </Head>
       <ProfileTemplate
         title='システム開発・運用サポート'
         subtitle={
@@ -56,7 +66,7 @@ const SystemDevelopment: NextPage<MicroCMSListResponse<achievement>> = ({
           <div className='lg:pb-16 pb-8 sm:my-10 mt-4'>
             <h1 className='text-5xl font-medium subpixel-antialiased'>実績</h1>
           </div>
-          <div className='carousel w-full'>
+          <UpMotionTemplate className='arousel w-full'>
             {contents.map((o, i) => {
               return (
                 <div key={o.id} id={'item' + String(i + 1)} className='carousel-item w-full'>
@@ -90,7 +100,7 @@ const SystemDevelopment: NextPage<MicroCMSListResponse<achievement>> = ({
                 </div>
               )
             })}
-          </div>
+          </UpMotionTemplate>
           <div className='flex justify-center w-full my-4 gap-2'>
             {[...Array(totalCount > 5 ? 5 : totalCount)].map((_, i) => {
               return (
