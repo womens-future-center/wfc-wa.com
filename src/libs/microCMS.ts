@@ -1,7 +1,7 @@
 import { createClient } from 'microcms-js-sdk'
 import { MicroCMS } from 'microcms-lib'
 
-import { EndPoints } from './../types/cms-types'
+import { EndPoints } from '../types/cms-types'
 
 export const client = createClient({
   serviceDomain: process.env.SERVICE_DOMAIN!,
