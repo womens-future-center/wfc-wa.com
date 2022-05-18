@@ -1,6 +1,7 @@
 import { MicroCMSListResponse } from 'microcms-js-sdk'
 import { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import Card from '../../components/molecules/Card'
 import VerticalCard from '../../components/molecules/VeriticalCard'
@@ -27,6 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const BrandingDesign: NextPage<MicroCMSListResponse<achievement>> = ({ contents, totalCount }) => {
+  const router = useRouter()
   const { width } = useWindowSize()
   return (
     <>
@@ -46,7 +48,7 @@ const BrandingDesign: NextPage<MicroCMSListResponse<achievement>> = ({ contents,
       >
         <div className='flex flex-col justify-center items-center sm:px-10 px-3'>
           <div className='lg:pb-16 pb-8 sm:my-10 mt-4'>
-            <h1 className='text-4xl font-medium subpixel-antialiased'>実績</h1>
+            <h1 className='text-5xl font-medium subpixel-antialiased'>実績</h1>
           </div>
           <div className='carousel w-full'>
             {contents.map((o, i) => {
@@ -99,6 +101,14 @@ const BrandingDesign: NextPage<MicroCMSListResponse<achievement>> = ({ contents,
               </a>
             </Link>
           </div>
+          <div className='lg:m-5 m-2'>
+            <button
+              onClick={() => router.back()}
+              className='btn text-xl md:text-base text-gray-600 font-bold no-underline hover:underline'
+            >
+              <p className='text-xl md:text-base text-offwhite font-bold'>&lt; BACK</p>
+            </button>
+          </div>
           <div className='mb-4'></div>
         </div>
       </ProfileTemplate>
@@ -111,7 +121,7 @@ export default BrandingDesign
 const Cards: CardProps[] = [
   {
     isHtml: false,
-    imagePath: '/topImage.jpg',
+    imagePath: '/blanding_design.png',
     alt: 'ミッション共有イメージ',
     title: 'ミッションを共有する',
     content: (
@@ -131,7 +141,7 @@ const Cards: CardProps[] = [
   },
   {
     isHtml: false,
-    imagePath: '/topImage.jpg',
+    imagePath: '/blanding_design.png',
     alt: '商品・サービスの再定義イメージ',
     title: '商品・サービスの再定義をする',
     content: (
@@ -150,7 +160,7 @@ const Cards: CardProps[] = [
   },
   {
     isHtml: false,
-    imagePath: '/topImage.jpg',
+    imagePath: '/blanding_design.png',
     alt: 'デザイン設計書作成イメージ',
     title: 'デザインの設計書をつくる',
     content: (
@@ -169,7 +179,7 @@ const Cards: CardProps[] = [
   },
   {
     isHtml: false,
-    imagePath: '/topImage.jpg',
+    imagePath: '/blanding_design.png',
     alt: '世界観イメージ',
     title: '世界観を届ける',
     content: (
@@ -188,7 +198,7 @@ const Cards: CardProps[] = [
   },
   {
     isHtml: false,
-    imagePath: '/topImage.jpg',
+    imagePath: '/blanding_design.png',
     alt: '継続イメージ',
     title: '継続して続ける',
     content: (

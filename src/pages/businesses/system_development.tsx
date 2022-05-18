@@ -1,6 +1,7 @@
 import { MicroCMSListResponse } from 'microcms-js-sdk'
 import { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import Card from '../../components/molecules/Card'
 import VerticalCard from '../../components/molecules/VeriticalCard'
@@ -30,6 +31,7 @@ const SystemDevelopment: NextPage<MicroCMSListResponse<achievement>> = ({
   contents,
   totalCount,
 }) => {
+  const router = useRouter()
   const { width } = useWindowSize()
   return (
     <>
@@ -52,7 +54,7 @@ const SystemDevelopment: NextPage<MicroCMSListResponse<achievement>> = ({
       >
         <div className='flex flex-col justify-center items-center sm:px-10 px-3'>
           <div className='lg:pb-16 pb-8 sm:my-10 mt-4'>
-            <h1 className='text-4xl font-medium subpixel-antialiased'>実績</h1>
+            <h1 className='text-5xl font-medium subpixel-antialiased'>実績</h1>
           </div>
           <div className='carousel w-full'>
             {contents.map((o, i) => {
@@ -105,6 +107,14 @@ const SystemDevelopment: NextPage<MicroCMSListResponse<achievement>> = ({
               </a>
             </Link>
           </div>
+          <div className='lg:m-5 m-2'>
+            <button
+              onClick={() => router.back()}
+              className='btn text-xl md:text-base text-gray-600 font-bold no-underline hover:underline'
+            >
+              <p className='text-xl md:text-base text-offwhite font-bold'>&lt; BACK</p>
+            </button>
+          </div>
           <div className='mb-4'></div>
         </div>
       </ProfileTemplate>
@@ -117,28 +127,28 @@ export default SystemDevelopment
 const Cards: CardProps[] = [
   {
     isHtml: false,
-    imagePath: '/topImage.jpg',
+    imagePath: '/system_development.png',
     alt: 'alt',
     title: '',
     content: 'システム構築から運用まで貫通サポート',
   },
   {
     isHtml: false,
-    imagePath: '/topImage.jpg',
+    imagePath: '/system_development.png',
     alt: 'alt',
     title: '',
     content: 'システムを構築し、仕組み化',
   },
   {
     isHtml: false,
-    imagePath: '/topImage.jpg',
+    imagePath: '/system_development.png',
     alt: 'alt',
     title: '',
     content: '在宅ワーカーにレクチャー',
   },
   {
     isHtml: false,
-    imagePath: '/topImage.jpg',
+    imagePath: '/system_development.png',
     alt: 'alt',
     title: '',
     content: '運用をスタート',
