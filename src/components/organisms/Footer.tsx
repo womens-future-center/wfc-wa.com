@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
 
-import * as gtag from '../../libs/gtag'
-
 const Footer = () => {
   return (
     <>
