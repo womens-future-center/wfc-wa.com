@@ -19,7 +19,6 @@
     "dotenv": "^16.0.1",
     "framer-motion": "^6.3.3",
     "microcms-js-sdk": "^2.0.0",
-    "microcms-lib": "^1.0.4",
     "next": "^12.1.4",
     "next-sitemap": "^2.5.20",
     "react": "17.0.2",
