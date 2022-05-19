@@ -8,13 +8,13 @@ import Pagination from '../../../components/molecules/Pagination'
 import VerticalCard from '../../../components/molecules/VeriticalCard'
 import ProfileTemplate from '../../../components/templates/ProfileTemplate'
 import UpMotionTemplate from '../../../components/templates/motions/UpMotionTemplate'
-import { cms } from '../../../libs/microCMS'
+import { client } from '../../../libs/microCMS'
 import { achievement } from '../../../types/cms-types'
 
 const PER_PAGE = 5
 
 export const getStaticPaths = async () => {
-  const data = await cms.gets('achievement')
+  const data = await client.get({ endpoint: 'achievement' })
   const { totalCount } = data!
   const range = (start: number, end: number) => [...Array(end - start + 1)].map((_, i) => start + i)
   const paths = range(1, Math.ceil(totalCount / PER_PAGE)).map(
@@ -25,11 +25,13 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = Number(context.params!.id)
-
-  const data = await cms.gets('achievement', {
-    offset: (id - 1) * 5,
-    limit: 5,
-    orders: '-createdAt',
+  const data = await client.get({
+    endpoint: 'achievement',
+    queries: {
+      offset: (id - 1) * 5,
+      limit: 5,
+      orders: '-createdAt',
+    },
   })
   const { totalCount, contents } = data!
   return {
