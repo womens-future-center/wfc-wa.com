@@ -46,12 +46,7 @@ const Body = ({ post }: { post: achievement }) => {
   return (
     <>
       <Head>
-        <title>
-          女性起業支援のWomen&apos;s Future Center(ウィメンズフューチャーセンター) –
-          女性の起業支援を行うWomen&apos;s Future
-          Center。400名以上の女性ネットワーク会員が自主企画講座を開催!
-          在宅ワーカー支援事業も行っております｡
-        </title>
+        <title>{post.title} | 株式会社Women&apos;s Future Center</title>
       </Head>
       <div className='lg:p-20 p-8'>
         <UpMotionTemplate>
