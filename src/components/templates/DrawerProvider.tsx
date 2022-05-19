@@ -34,6 +34,7 @@ type Link = {
 
 const Links: Link[] = [
   { linkTo: '/', linkName: 'TOP' },
-  { linkTo: '/achievements/page/1', linkName: '実績' },
+  { linkTo: '/businesses', linkName: '事業概要' },
   { linkTo: '/info', linkName: '企業概要' },
+  { linkTo: '/achievements/page/1', linkName: '実績' },
 ]
