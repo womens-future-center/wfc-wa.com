@@ -8,7 +8,7 @@ import Pagination from '../../../components/molecules/Pagination'
 import VerticalCard from '../../../components/molecules/VeriticalCard'
 import ProfileTemplate from '../../../components/templates/ProfileTemplate'
 import UpMotionTemplate from '../../../components/templates/motions/UpMotionTemplate'
-import { client } from '../../../libs/microCMS'
+import { client } from '../../../libs/microCMS/client'
 import { achievement } from '../../../types/cms-types'
 
 const PER_PAGE = 5

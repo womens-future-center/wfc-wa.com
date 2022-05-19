@@ -7,7 +7,7 @@ import VerticalCard from '../../components/molecules/VeriticalCard'
 import PageTemplate from '../../components/templates/PageTemplate'
 import UpMotionTemplate from '../../components/templates/motions/UpMotionTemplate'
 import { useWindowSize } from '../../hooks/useWindowSize'
-import { client } from '../../libs/microCMS'
+import { client } from '../../libs/microCMS/client'
 import { achievement } from '../../types/cms-types'
 import { TAILWIND_LG } from '../../types/types'
 

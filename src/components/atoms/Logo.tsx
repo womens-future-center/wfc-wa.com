@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 
 import LOGO from '../../../public/logo.png'
-import { microCMSLoader } from '../../libs/microCMS'
+import { microCMSLoader } from '../../libs/microCMS/loader'
 
 type Props = {
   width: number

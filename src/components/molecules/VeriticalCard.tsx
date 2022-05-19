@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-import { microCMSLoader } from '../../libs/microCMS'
+import { microCMSLoader } from '../../libs/microCMS/loader'
 import { CardProps } from '../../types/types'
 
 const VerticalCard = ({
