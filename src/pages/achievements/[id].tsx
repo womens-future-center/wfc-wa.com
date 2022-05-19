@@ -21,14 +21,14 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const id = String(context.params!.id!)
+  const id = String(context.params!.id)
   const data = await client.get({
     endpoint: 'achievement',
     contentId: id,
   })
   return {
     props: {
-      post: data!.body,
+      post: data!,
     },
   }
 }
