@@ -5,6 +5,9 @@ const nextConfig = {
     loader: 'custom',
     domains: ['images.microcms-assets.io'],
   },
+  experimental: {
+    esmExternals: false,
+  },
 }
 
 module.exports = nextConfig
