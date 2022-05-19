@@ -13,9 +13,11 @@ type Props = {
 const HamburgerButton = ({ onClick }: Props) => {
   return (
     <Button onClick={onClick}>
-      <div className={styles.hamburgerbutton}>
-        <FontAwesomeIcon icon={faBars} size='2x' />
-      </div>
+      <label htmlFor='my-drawer-4' className='drawer-button'>
+        <div className={styles.hamburgerbutton}>
+          <FontAwesomeIcon icon={faBars} size='2x' />
+        </div>
+      </label>
     </Button>
   )
 }

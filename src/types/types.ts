@@ -15,5 +15,9 @@ export type CardProps = {
   alt: string
   title: string | ReactNode
   content: string | ReactNode
+  isHtml: boolean
   className?: string
+  tag?: string
+  more?: boolean | ReactNode
+  onClick?: () => void
 }

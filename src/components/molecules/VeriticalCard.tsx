@@ -1,37 +1,67 @@
 import Image from 'next/image'
 import React from 'react'
 
+import { microCMSLoader } from '../../libs/microCMS'
 import { CardProps } from '../../types/types'
 
-const VerticalCard = ({ imagePath, alt, title, content }: CardProps) => {
+const VerticalCard = ({
+  imagePath,
+  alt,
+  title,
+  content,
+  isHtml,
+  tag,
+  more,
+  onClick,
+}: CardProps) => {
+  const text =
+    typeof content === 'string' && isHtml ? (
+      <div
+        className='prose lg:text-lg text-xs text-left break-all'
+        dangerouslySetInnerHTML={{
+          __html: content,
+        }}
+      ></div>
+    ) : (
+      <p className='lg:text-lg text-xs text-left break-all'>{content}</p>
+    )
   return (
     <>
-      <div className='card lg:p-10 p-3 w-full h-full flex flex-col bg-offwhite'>
-        <div className='lg:m-5 m-2 basis-1/3 relative justify-center align-center'>
+      <div className='card lg:p-4 p-2 w-full flex flex-col bg-offwhite'>
+        <div className='p-2'>
           <Image
+            loader={microCMSLoader}
             className='rounded-xl'
             src={imagePath}
             alt={alt}
-            layout='fill'
+            width={3}
+            height={2}
+            layout='responsive'
             objectFit='contain'
             priority={true}
           />
         </div>
-        <div className='basis-2/3 lg:p-5 p-2 flex flex-col align-center'>
+        <div className='basis-2/3 flex flex-col justify-start'>
+          {tag && (
+            <div className='flex justify-center mb-2'>
+              <div className='badge badge-sm'>{tag}</div>
+            </div>
+          )}
           <div>
             {typeof title === 'string' ? (
-              <h1 className='lg:text-2xl text-base text-center break-all'>{title}</h1>
+              <h1 className='p-2 lg:text-2xl text-base text-center break-all'>{title}</h1>
             ) : (
               title
             )}
           </div>
-          <div className='mt-3'>
-            {typeof content === 'string' ? (
-              <p className='lg:text-lg text-sm text-left break-all'>{content}</p>
-            ) : (
-              content
-            )}
-          </div>
+          <div className='p-2 mt-3'>{typeof content === 'string' ? text : content}</div>
+          {typeof more === 'boolean' ? (
+            <button onClick={onClick} className='btn'>
+              もっと見る
+            </button>
+          ) : (
+            more
+          )}
         </div>
       </div>
     </>
