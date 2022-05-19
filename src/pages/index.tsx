@@ -53,7 +53,7 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
     <>
       {/* Topの画像部 */}
       <motion.div
-        className='relative'
+        className='relative flex justify-center items-center'
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
@@ -65,16 +65,23 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
           duration: 0.5,
         }}
       >
-        <Image
-          loader={microCMSLoader}
-          className='absolute'
-          src='/top_image.png'
-          alt='Top image'
-          layout='intrinsic'
-          objectFit='contain'
-          width={600}
-          height={600}
-        />
+        <motion.div
+          animate={{
+            y: [20, -20, 20],
+          }}
+          transition={{ repeat: Infinity, duration: 2.5 }}
+        >
+          <Image
+            loader={microCMSLoader}
+            className='absolute'
+            src='/top_image.png'
+            alt='Top image'
+            layout='intrinsic'
+            objectFit='contain'
+            width={600}
+            height={600}
+          />
+        </motion.div>
         <h1 className='xl:text-4xl md:text-3xl text-base absolute left-1/2 bottom-1/3'>
           誰もが自由な働き方ができる社会へ
         </h1>
