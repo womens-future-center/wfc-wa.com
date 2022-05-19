@@ -38,7 +38,10 @@ const SystemDevelopment: NextPage<MicroCMSListResponse<achievement>> = ({
   return (
     <>
       <Head>
-        <title>システム開発 | 株式会社Women&apos;s Future Center</title>
+        <title>
+          システム開発 | 株式会社Women&apos;s Future Center | 在宅ワーク支援 システム開発
+          ブランディングデザイン
+        </title>
       </Head>
       <ProfileTemplate
         title='システム開発・運用サポート'

@@ -46,7 +46,10 @@ const Body = ({ post }: { post: achievement }) => {
   return (
     <>
       <Head>
-        <title>{post.title} | 株式会社Women&apos;s Future Center</title>
+        <title>
+          {post.title} | 株式会社Women&apos;s Future Center | 在宅ワーク支援 システム開発
+          ブランディングデザイン
+        </title>
       </Head>
       <div className='lg:p-20 p-8'>
         <UpMotionTemplate>

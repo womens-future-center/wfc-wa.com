@@ -8,7 +8,10 @@ const Privacy: NextPage = () => {
   return (
     <>
       <Head>
-        <title>特定商取引法による表示 | 株式会社Women&apos;s Future Center</title>
+        <title>
+          特定商取引法による表示 | 株式会社Women&apos;s Future Center | 在宅ワーク支援 システム開発
+          ブランディングデザイン
+        </title>
       </Head>
       <PageTemplate>
         <Body />

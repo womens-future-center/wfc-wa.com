@@ -64,7 +64,8 @@ const CategolizedAchievements: NextPage<MicroCMSListResponse<achievement>> = ({
     <>
       <Head>
         <title>
-          {slug}の実績一覧 - {id} | 株式会社Women&apos;s Future Center
+          {slug}の実績一覧 - {id} | 株式会社Women&apos;s Future Center | 在宅ワーク支援 システム開発
+          ブランディングデザイン
         </title>
       </Head>
       <ProfileTemplate title='実績一覧'>

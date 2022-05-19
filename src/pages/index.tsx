@@ -34,7 +34,9 @@ const Index: NextPage<MicroCMSListResponse<achievement>> = ({ contents, totalCou
   return (
     <>
       <Head>
-        <title>株式会社Women&apos;s Future Center</title>
+        <title>
+          株式会社Women&apos;s Future Center | 在宅ワーク支援 システム開発 ブランディングデザイン
+        </title>
       </Head>
       <PageTemplate>
         <Body contents={contents} totalCount={totalCount} />

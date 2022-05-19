@@ -48,7 +48,10 @@ const Achievements: NextPage<MicroCMSListResponse<achievement>> = ({ contents, t
   return (
     <>
       <Head>
-        <title>実績一覧 - {id} | 株式会社Women&apos;s Future Center</title>
+        <title>
+          実績一覧 - {id} | 株式会社Women&apos;s Future Center | 在宅ワーク支援 システム開発
+          ブランディングデザイン
+        </title>
       </Head>
       <ProfileTemplate title='実績一覧'>
         <div className='flex flex-col justify-center items-center sm:px-10 px-3 mb-10'>

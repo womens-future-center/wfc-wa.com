@@ -34,7 +34,10 @@ const BrandingDesign: NextPage<MicroCMSListResponse<achievement>> = ({ contents,
   return (
     <>
       <Head>
-        <title>ブランディングデザイン | 株式会社Women&apos;s Future Center</title>
+        <title>
+          ブランディングデザイン | 株式会社Women&apos;s Future Center | 在宅ワーク支援 システム開発
+          ブランディングデザイン
+        </title>
       </Head>
       <ProfileTemplate
         title='ブランディングデザイン'

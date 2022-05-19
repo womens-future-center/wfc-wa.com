@@ -9,7 +9,10 @@ const Info: NextPage = () => {
   return (
     <>
       <Head>
-        <title>INFO | 株式会社Women&apos;s Future Center</title>
+        <title>
+          INFO | 株式会社Women&apos;s Future Center | 在宅ワーク支援 システム開発
+          ブランディングデザイン
+        </title>
       </Head>
       <PageTemplate>
         <Body />
