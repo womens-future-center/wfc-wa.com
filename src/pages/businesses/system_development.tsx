@@ -9,16 +9,19 @@ import VerticalCard from '../../components/molecules/VeriticalCard'
 import ProfileTemplate from '../../components/templates/ProfileTemplate'
 import UpMotionTemplate from '../../components/templates/motions/UpMotionTemplate'
 import { useWindowSize } from '../../hooks/useWindowSize'
-import { cms } from '../../libs/microCMS'
+import { client } from '../../libs/microCMS'
 import { achievement } from '../../types/cms-types'
 import { TAILWIND_LG } from '../../types/types'
 import { CardProps } from '../../types/types'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await cms.gets('achievement', {
-    limit: 6,
-    orders: '-createdAt',
-    filters: 'tag[equals]システム開発',
+  const data = await client.get({
+    endpoint: 'achievement',
+    queries: {
+      limit: 6,
+      orders: '-createdAt',
+      filters: 'tag[equals]システム開発',
+    },
   })
   const { totalCount, contents } = data!
   return {
