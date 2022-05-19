@@ -4,13 +4,6 @@ import React from 'react'
 import * as gtag from '../../libs/gtag'
 
 const Footer = () => {
-  const ClickEvent = () => {
-    gtag.event({
-      action: 'click_event',
-      category: 'link_button',
-      label: 'event',
-    })
-  }
   return (
     <>
       <footer className='text-center lg:text-left bg-gray-100 text-gray-600'>
@@ -20,7 +13,7 @@ const Footer = () => {
           </div>
           <div className='flex justify-center'>
             <Link href='https://www.facebook.com/WomensFutureCenter' passHref={true}>
-              <a className='mr-6 text-gray-600' onClick={ClickEvent}>
+              <a className='mr-6 text-gray-600'>
                 <svg
                   aria-hidden='true'
                   focusable='false'
@@ -39,7 +32,7 @@ const Footer = () => {
               </a>
             </Link>
             <Link href='https://twitter.com/tkrss' passHref={true}>
-              <a className='mr-6 text-gray-600' onClick={ClickEvent}>
+              <a className='mr-6 text-gray-600'>
                 <svg
                   aria-hidden='true'
                   focusable='false'
@@ -58,7 +51,7 @@ const Footer = () => {
               </a>
             </Link>
             <Link href='https://lin.ee/d2JObVF' passHref={true}>
-              <a className='mr-6 text-gray-600' onClick={ClickEvent}>
+              <a className='mr-6 text-gray-600'>
                 <svg
                   aria-hidden='true'
                   focusable='false'
@@ -77,7 +70,7 @@ const Footer = () => {
               </a>
             </Link>
             <Link href='https://www.instagram.com/wfc_nara' passHref={true}>
-              <a className='mr-6 text-gray-600' onClick={ClickEvent}>
+              <a className='mr-6 text-gray-600'>
                 <svg
                   aria-hidden='true'
                   focusable='false'
@@ -96,7 +89,7 @@ const Footer = () => {
               </a>
             </Link>
             <Link href='https://github.com/womens-future-center' passHref={true}>
-              <a className='text-gray-600' onClick={ClickEvent}>
+              <a className='text-gray-600'>
                 <svg
                   aria-hidden='true'
                   focusable='false'

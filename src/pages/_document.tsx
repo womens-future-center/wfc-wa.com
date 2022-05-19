@@ -1,28 +1,21 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
-import { existsGaId, GA_ID } from '../libs/gtag'
-
 export default function Document() {
   return (
     <Html lang='ja'>
       <Head>
-        {/* Google Analytics */}
-        {existsGaId && (
-          <>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${GA_ID}', {
-                    page_path: window.location.pathname,
-                  });`,
-              }}
-            />
-          </>
-        )}
+        {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+        <script async src='https://www.googletagmanager.com/gtag/js?id=UA-58518839-1' />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '[Tracking ID]');
+        `,
+          }}
+        />
         <meta name='Keywords' content="Women's Future Center" />
         <meta name='Keywords' content='ウィメンズフューチャーセンター' />
         <meta name='Keywords' content="株式会社Women's Future Center" />
