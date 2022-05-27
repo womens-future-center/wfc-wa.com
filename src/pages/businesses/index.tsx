@@ -278,14 +278,14 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
                       <Link href='https://www.jfc.go.jp/' passHref={true}>
                         <a>
                           <p className='p-2 xl:text-2xl sm:text-lg text-base text-center font-normal'>
-                            株式会社日本政策金融公
+                            株式会社日本政策金融公庫
                           </p>
                         </a>
                       </Link>
                       <Link href='https://www.obda.or.jp/' passHref={true}>
                         <a>
                           <p className='p-2 xl:text-2xl sm:text-lg text-base text-center font-normal'>
-                            交易財団法人大阪産業局（旧大阪市都市型産業振興センター）
+                            公益財団法人大阪産業局（旧大阪市都市型産業振興センター）
                           </p>
                         </a>
                       </Link>
