@@ -128,8 +128,8 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
           <RCard
             isHtml={false}
             imagePath='/branding_design.png'
-            alt='ブランディングデザイン'
-            title='ブランディングデザインイメージ'
+            alt='ブランディングデザインイメージ'
+            title='ブランディングデザイン'
             content={
               <>
                 <div className='flex flex-col justify-center items-center'>
