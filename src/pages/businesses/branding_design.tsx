@@ -131,7 +131,7 @@ export default BrandingDesign
 const Cards: CardProps[] = [
   {
     isHtml: false,
-    imagePath: '/branding_design.png',
+    imagePath: '/branding_design_page/mission.png',
     alt: 'ミッション共有イメージ',
     title: 'ミッションを共有する',
     content: (
@@ -151,7 +151,7 @@ const Cards: CardProps[] = [
   },
   {
     isHtml: false,
-    imagePath: '/branding_design.png',
+    imagePath: '/branding_design_page/service_definition.png',
     alt: '商品・サービスの再定義イメージ',
     title: '商品・サービスの再定義をする',
     content: (
@@ -170,7 +170,7 @@ const Cards: CardProps[] = [
   },
   {
     isHtml: false,
-    imagePath: '/branding_design.png',
+    imagePath: '/branding_design_page/design_spec.png',
     alt: 'デザイン設計書作成イメージ',
     title: 'デザインの設計書をつくる',
     content: (
@@ -189,7 +189,7 @@ const Cards: CardProps[] = [
   },
   {
     isHtml: false,
-    imagePath: '/branding_design.png',
+    imagePath: '/branding_design_page/design_view.png',
     alt: '世界観イメージ',
     title: '世界観を届ける',
     content: (
@@ -208,7 +208,7 @@ const Cards: CardProps[] = [
   },
   {
     isHtml: false,
-    imagePath: '/branding_design.png',
+    imagePath: '/branding_design_page/continuous.png',
     alt: '継続イメージ',
     title: '継続して続ける',
     content: (
