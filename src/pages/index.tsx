@@ -74,7 +74,7 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
           <Image
             loader={microCMSLoader}
             className='absolute'
-            src='/top_image.png'
+            src='/top_image/top_image.png'
             alt='Top image'
             layout='intrinsic'
             objectFit='contain'
@@ -91,7 +91,7 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
         <div className='flex justify-center items-center bg-bggray p-10 relative'>
           <Image
             loader={microCMSLoader}
-            src='/vector.png'
+            src='/top_image/vector.png'
             alt='Shape'
             width='500'
             height='400'
@@ -171,7 +171,7 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
             <a>
                 <Card
                   isHtml={false}
-                  imagePath='/top_image.png'
+                  imagePath='/top_image/top_image.png'
                   alt='オンラインスクールイメージ'
                   title='オンラインスクール事業'
                   content={
