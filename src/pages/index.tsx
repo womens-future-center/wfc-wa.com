@@ -9,6 +9,7 @@ import React from 'react'
 import Card from '../components/molecules/Card'
 import VerticalCard from '../components/molecules/VeriticalCard'
 import PageTemplate from '../components/templates/PageTemplate'
+import TopImageTemplate from '../components/templates/TopImageTemplate'
 import UpMotionTemplate from '../components/templates/motions/UpMotionTemplate'
 import { useWindowSize } from '../hooks/useWindowSize'
 import { client } from '../libs/microCMS/client'
@@ -53,7 +54,7 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
     <>
       {/* Topの画像部 */}
       <motion.div
-        className='relative flex justify-center items-center'
+        className='relative xl:h-full md:h-5/6 xs:h-[60%] h-[40%]'
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
@@ -65,33 +66,14 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
           duration: 0.5,
         }}
       >
-        <motion.div
-          animate={{
-            y: [20, -20, 20],
-          }}
-          transition={{ repeat: Infinity, duration: 2.5 }}
-        >
-          <Image
-            loader={microCMSLoader}
-            className='absolute'
-            src='/top_image/top_image.png'
-            alt='Top image'
-            layout='intrinsic'
-            objectFit='contain'
-            width={600}
-            height={600}
-          />
-        </motion.div>
-        <h1 className='xl:text-4xl md:text-3xl text-base absolute left-1/2 bottom-1/3'>
-          誰もが自由な働き方ができる社会へ
-        </h1>
+        <TopImageTemplate />
       </motion.div>
       {/* 中段の指針部 */}
       <UpMotionTemplate>
         <div className='flex justify-center items-center bg-bggray p-10 relative'>
           <Image
             loader={microCMSLoader}
-            src='/top_image/vector.png'
+            src='/nara.png'
             alt='Shape'
             width='500'
             height='400'

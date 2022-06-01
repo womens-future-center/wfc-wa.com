@@ -21,3 +21,5 @@ export type CardProps = {
   more?: boolean | ReactNode
   onClick?: () => void
 }
+
+export type ImageProps = { className: string; path: string; alt: string }
