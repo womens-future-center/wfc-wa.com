@@ -64,11 +64,11 @@ ESLint によるリント､Prettier によるソースコードフォーマッ�
 
 特に Prettier については､vscode 使用時はファイル保存時に自動でフォーマットが行われるよう設定を行っております｡
 
-### Vercel
+### Host
 
-このプロジェクトは Vercel にホストしています｡
+このプロジェクトは Cloudflare Pages にホストしています｡
 
-プルリクエストを送ると､Vercel によってプレビュー URL が発行され､閲覧することが出来ます｡
+プルリクエストを送ると､ Cloudflare Pages によってプレビュー URL が発行され､閲覧することが出来ます｡
 
 ## License
 
