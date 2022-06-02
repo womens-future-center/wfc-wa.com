@@ -37,4 +37,5 @@ const Links: Link[] = [
   { linkTo: '/businesses', linkName: '事業概要' },
   { linkTo: '/info', linkName: '企業概要' },
   { linkTo: '/achievements/page/1', linkName: '実績' },
+  { linkTo: '/wfc-works', linkName: 'WFC Works' },
 ]
