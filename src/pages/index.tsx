@@ -241,7 +241,7 @@ const Body = ({
         </UpMotionTemplate>
         <UpMotionTemplate>
           <div className='flex justify-center w-full my-4 gap-2'>
-            {[...Array(newsCount > 5 ? 5 : newsCount)].map((_, i) => {
+            {[...Array(totalCount > 5 ? 5 : totalCount)].map((_, i) => {
               return (
                 <Link key={i} href={'#item' + String(i + 1)} passHref={true}>
                   <a className='btn btn-xs'>{i + 1}</a>
