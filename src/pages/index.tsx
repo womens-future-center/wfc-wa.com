@@ -1,5 +1,5 @@
+import dayjs from 'dayjs'
 import { motion } from 'framer-motion'
-import { MicroCMSListResponse } from 'microcms-js-sdk'
 import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -14,7 +14,7 @@ import UpMotionTemplate from '../components/templates/motions/UpMotionTemplate'
 import { useWindowSize } from '../hooks/useWindowSize'
 import { client } from '../libs/microCMS/client'
 import { microCMSLoader } from '../libs/microCMS/loader'
-import { achievement } from '../types/cms-types'
+import { achievement, news } from '../types/cms-types'
 import { TAILWIND_LG } from '../types/types'
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -23,15 +23,29 @@ export const getStaticProps: GetStaticProps = async () => {
     queries: { limit: 6, orders: '-createdAt' },
   })
   const { totalCount, contents } = data!
+  const newsData = await client.get({
+    endpoint: 'news',
+    queries: { limit: 6, orders: '-createdAt' },
+  })
+  const { totalCount: newsCount, contents: news } = newsData!
   return {
     props: {
-      contents: contents,
-      totalCount: totalCount,
+      achivement: {
+        contents: contents,
+        totalCount: totalCount,
+      },
+      news: {
+        contents: news,
+        totalCount: newsCount,
+      },
     },
   }
 }
 
-const Index: NextPage<MicroCMSListResponse<achievement>> = ({ contents, totalCount }) => {
+const Index: NextPage<{
+  achivement: { contents: achievement[]; totalCount: number }
+  news: { contents: news[]; totalCount: number }
+}> = ({ achivement, news }) => {
   return (
     <>
       <Head>
@@ -40,7 +54,12 @@ const Index: NextPage<MicroCMSListResponse<achievement>> = ({ contents, totalCou
         </title>
       </Head>
       <PageTemplate>
-        <Body contents={contents} totalCount={totalCount} />
+        <Body
+          contents={achivement.contents}
+          totalCount={achivement.totalCount}
+          news={news.contents}
+          newsCount={news.totalCount}
+        />
       </PageTemplate>
     </>
   )
@@ -48,7 +67,17 @@ const Index: NextPage<MicroCMSListResponse<achievement>> = ({ contents, totalCou
 
 export default Index
 
-const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: number }) => {
+const Body = ({
+  contents,
+  totalCount,
+  newsCount,
+  news,
+}: {
+  contents: achievement[]
+  news: news[]
+  totalCount: number
+  newsCount: number
+}) => {
   const { width } = useWindowSize()
   return (
     <>
@@ -212,7 +241,7 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
         </UpMotionTemplate>
         <UpMotionTemplate>
           <div className='flex justify-center w-full my-4 gap-2'>
-            {[...Array(totalCount > 5 ? 5 : totalCount)].map((_, i) => {
+            {[...Array(newsCount > 5 ? 5 : newsCount)].map((_, i) => {
               return (
                 <Link key={i} href={'#item' + String(i + 1)} passHref={true}>
                   <a className='btn btn-xs'>{i + 1}</a>
@@ -226,6 +255,60 @@ const Body = ({ contents, totalCount }: { contents: achievement[]; totalCount: n
                 <button className='btn btn-ghost'>もっと見る</button>
               </a>
             </Link>
+          </div>
+        </UpMotionTemplate>
+      </div>
+      {/* お知らせ部 */}
+      <div className='flex flex-col justify-center items-center sm:px-10 px-3'>
+        {/* <div className='lg:pb-16 pb-8 sm:my-10 mt-4'>
+          <h1 className='text-4xl font-medium subpixel-antialiased'>お知らせ</h1>
+        </div> */}
+        <UpMotionTemplate className='w-full'>
+          <div className='bg-primary px-4 py-5 border-b rounded-xl sm:px-6'>
+            <h3 className='text-lg leading-6 font-medium text-white'>お知らせ</h3>
+          </div>
+          <div className='bg-offwhite overflow-hidden sm:rounded-xl'>
+            <ul className='divide-y divide-gray-200'>
+              {news.map((o, i) => {
+                return (
+                  <li key={i}>
+                    <Link href={'/news/' + o.id} passHref={true}>
+                      <a className='block hover:bg-gray-200'>
+                        <div className='px-4 py-4 sm:px-6'>
+                          <div className='flex items-center justify-between'>
+                            <p className='text-sm font-light text-gray-700 truncate'>
+                              <time>{dayjs(o.createdAt).format('YYYY-MM-DD')}</time>
+                            </p>
+                            <div className='ml-2 flex-shrink-0 flex'>
+                              <p className='px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800'>
+                                お知らせ
+                              </p>
+                            </div>
+                          </div>
+                          <div className='mt-2 sm:flex sm:justify-between'>
+                            <div className='sm:flex'>
+                              <p className='flex items-center text-sm font-medium'>{o.title}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+            <div className='w-full flex flex-col justify-center items-center'>
+              <Link href='/news/page/1' passHref={true}>
+                <a>
+                  <button
+                    type='button'
+                    className='inline-flex items-center m-4 px-4 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600'
+                  >
+                    もっと見る
+                  </button>
+                </a>
+              </Link>
+            </div>
           </div>
         </UpMotionTemplate>
       </div>
