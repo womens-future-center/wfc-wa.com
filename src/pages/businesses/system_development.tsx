@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import Card from '../../components/molecules/Card'
+import CardTitleLeft from '../../components/molecules/CardTitleLeft'
 import VerticalCard from '../../components/molecules/VeriticalCard'
 import ProfileTemplate from '../../components/templates/ProfileTemplate'
 import UpMotionTemplate from '../../components/templates/motions/UpMotionTemplate'
@@ -74,7 +74,7 @@ const SystemDevelopment: NextPage<MicroCMSListResponse<achievement>> = ({
                   <Link href={'/achievements/' + o.id} passHref={true}>
                     <a className='w-full h-full'>
                       {width > TAILWIND_LG ? (
-                        <Card
+                        <CardTitleLeft
                           isHtml
                           imagePath={o.image.url}
                           alt={o.title}
