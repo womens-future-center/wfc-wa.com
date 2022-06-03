@@ -67,7 +67,7 @@ const SystemDevelopment: NextPage<MicroCMSListResponse<achievement>> = ({
           <div className='lg:pb-16 pb-8 sm:my-10 mt-4'>
             <h1 className='text-5xl font-medium subpixel-antialiased'>実績</h1>
           </div>
-          <UpMotionTemplate className='arousel w-full'>
+          <UpMotionTemplate className='carousel w-full'>
             {contents.map((o, i) => {
               return (
                 <div key={o.id} id={'item' + String(i + 1)} className='carousel-item w-full'>
