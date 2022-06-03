@@ -112,7 +112,7 @@ const SystemDevelopment: NextPage<MicroCMSListResponse<achievement>> = ({
             })}
           </div>
           <div>
-            <Link href='/achievements/category/システム開発/1' passHref={true}>
+            <Link href='/achievements/category/システム/1' passHref={true}>
               <a>
                 <button className='btn btn-ghost'>もっと見る</button>
               </a>

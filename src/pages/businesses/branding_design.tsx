@@ -105,7 +105,7 @@ const BrandingDesign: NextPage<MicroCMSListResponse<achievement>> = ({ contents,
             })}
           </div>
           <div>
-            <Link href='/achievements/category/ブランディングデザイン/1' passHref={true}>
+            <Link href='/achievements/category/デザイン/1' passHref={true}>
               <a>
                 <button className='btn btn-ghost'>もっと見る</button>
               </a>
