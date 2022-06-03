@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
     queries: {
       limit: 6,
       orders: '-createdAt',
-      filters: 'tag[equals]ブランディングデザイン',
+      filters: 'tag[equals]デザイン',
     },
   })
   const { totalCount, contents } = data!
