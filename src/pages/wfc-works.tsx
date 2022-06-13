@@ -82,7 +82,7 @@ const Body = () => {
             </div>
             <div className='flex flex-col justify-center items-center'>
               <h1 className='xl:p-4 p-2 xl:text-3xl sm:text-xl text-md font-semibold text-center'>
-                フリーランスとしてプロジェクトに参加していただきます。まずはご登録ください。
+                はじめはフリーランスとしてプロジェクトに参加していただきます。まずはご登録ください。
               </h1>
               <div className='flex flex-row justify-center items-center'>
                 <div className='flex flex-col justify-center items-center'>
