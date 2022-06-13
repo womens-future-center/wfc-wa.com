@@ -138,28 +138,28 @@ export default SystemDevelopment
 const Cards: CardProps[] = [
   {
     isHtml: false,
-    imagePath: '/system_development_image_1.png',
+    imagePath: '/system_development_image/system_development_image_1.png',
     alt: 'システム構築から運用まで一貫サポート',
     title: '',
     content: 'システム構築から運用まで一貫サポート',
   },
   {
     isHtml: false,
-    imagePath: '/system_development_image_2.png',
+    imagePath: '/system_development_image/system_development_image_2.png',
     alt: 'システムを構築し、仕組み化',
     title: '',
     content: 'システムを構築し、仕組み化',
   },
   {
     isHtml: false,
-    imagePath: '/system_development_image_3.png',
+    imagePath: '/system_development_image/system_development_image_3.png',
     alt: '在宅ワーカーにレクチャー',
     title: '',
     content: '在宅ワーカーにレクチャー',
   },
   {
     isHtml: false,
-    imagePath: '/system_development_image_4.png',
+    imagePath: '/system_development_image/system_development_image_4.png',
     alt: '運用をスタート',
     title: '',
     content: '運用をスタート',
