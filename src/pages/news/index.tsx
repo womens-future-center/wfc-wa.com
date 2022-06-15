@@ -39,6 +39,14 @@ const Achievements: NextPage<MicroCMSListResponse<news>> = ({ contents, totalCou
         </title>
       </Head>
       <ProfileTemplate title='お知らせ一覧'>
+        <div className='lg:m-5 m-2'>
+          <button
+            onClick={() => router.back()}
+            className='text-xl md:text-base text-gray-600 font-bold no-underline hover:underline'
+          >
+            <p className='text-xl md:text-base text-gray-600 font-bold'>&lt; BACK</p>
+          </button>
+        </div>
         <div className='min-h-[50vh]'>
           <UpMotionTemplate>
             <div className='m-10 bg-offwhite overflow-hidden sm:rounded-xl'>
