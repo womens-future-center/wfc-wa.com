@@ -298,7 +298,7 @@ const Body = ({
               })}
             </ul>
             <div className='w-full flex flex-col justify-center items-center'>
-              <Link href='/news/page/1' passHref={true}>
+              <Link href='/news' passHref={true}>
                 <a>
                   <button
                     type='button'
