@@ -249,7 +249,7 @@ const Body = ({
               )
             })}
           </div>
-          <div>
+          <div className='flex justify-center items-center">
             <Link href='/achievements/page/1' passHref={true}>
               <a>
                 <button className='btn btn-ghost'>もっと見る</button>
