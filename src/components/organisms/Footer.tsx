@@ -184,6 +184,11 @@ const Footer = () => {
                   <a className='text-gray-600'>個人情報保護方針</a>
                 </Link>
               </p>
+              <p className='mb-4'>
+                <Link href='/tokushoho' passHref={true}>
+                  <a className='text-gray-600'>特定商取引法による表示</a>
+                </Link>
+              </p>
             </div>
             <div className=''>
               <h6 className='uppercase font-semibold mb-4 flex justify-center md:justify-start'>
