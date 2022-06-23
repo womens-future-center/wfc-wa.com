@@ -1,8 +1,8 @@
 # [wfc-wa.com](https://wfc-wa.com)管理リポジトリ
 
-このリポジトリは[wfc-wa.com](https://wfc-wa.com)のサイト開発リポジトリ兼ホストリポジトリになります｡
+このリポジトリは[wfc-wa.com](https://wfc-wa.com)のサイト開発リポジトリ兼ホスティングリポジトリになります｡
 
-このソースコードよりビルドを行い､Vercel にてデプロイしています｡
+このソースコードよりビルドを行い､Cloudflare Pages にてデプロイしています｡
 
 ## ビルド状況
 
