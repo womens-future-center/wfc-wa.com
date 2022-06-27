@@ -317,10 +317,15 @@ const Body = ({
         <div className='lg:pb-16 pb-8 sm:my-10 mt-4'>
           <h1 className='text-4xl font-medium subpixel-antialiased'>お問い合わせ</h1>
         </div>
-        <UpMotionTemplate className='w-full'>
-          <iframe src={process.env.INQUIRY_LINK} className='w-full' width={1000} height={1000}>
-            読み込んでいます…
-          </iframe>
+        <UpMotionTemplate className='w-full flex flex-col justify-center items-center'>
+          <Link
+            href='https://docs.google.com/forms/d/e/1FAIpQLSf-kRnDTbFzhuwVVEgJlapEaCsey64bIDqRsLcvt_bzJkMVCQ/viewform?embedded=true'
+            passHref={true}
+          >
+            <a>
+              <button className='btn btn-accent btn-lg btn-wide'>お問い合わせはこちら</button>
+            </a>
+          </Link>
         </UpMotionTemplate>
       </div>
     </>
