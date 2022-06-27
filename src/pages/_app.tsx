@@ -1,6 +1,8 @@
 import { config } from '@fortawesome/fontawesome-svg-core'
 import Head from 'next/head'
 
+import { GoogleAnalytics } from '../libs/gtag'
+
 import type { AppProps } from 'next/app'
 
 import '../styles/reset.css'
@@ -15,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
+      <GoogleAnalytics />
       <Component {...pageProps} />
     </>
   )
