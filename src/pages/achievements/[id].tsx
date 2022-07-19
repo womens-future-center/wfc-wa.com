@@ -14,7 +14,7 @@ import { TAILWIND_LG } from '../../types/types'
 export const getStaticPaths = async () => {
   const data = await client.get({
     endpoint: 'achievement',
-    queries: { limit:1000, orders: '-createdAt' },
+    queries: { limit: 1000, orders: '-createdAt' },
   })
   const paths = data!.contents.map((content: achievement) => `/achievements/${content.id}`)
   return { paths, fallback: false }
