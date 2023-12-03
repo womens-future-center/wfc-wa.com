@@ -3,10 +3,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import CardNoImage from '../components/molecules/CardNoImage'
-import PageTemplate from '../components/templates/PageTemplate'
-import UpMotionTemplate from '../components/templates/motions/UpMotionTemplate'
-import { microCMSLoader } from '../libs/microCMS/loader'
+import CardNoImage from '../../components/molecules/CardNoImage'
+import PageTemplate from '../../components/templates/PageTemplate'
+import UpMotionTemplate from '../../components/templates/motions/UpMotionTemplate'
+import { microCMSLoader } from '../../libs/microCMS/loader'
 
 const Info: NextPage = () => {
   return (
@@ -144,6 +144,20 @@ const Body = () => {
                       <dd className='mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
                         <p className='p-2 xl:text-2xl sm:text-lg text-base font-normal text-center'>
                           29-ユ-300158
+                        </p>
+                      </dd>
+                    </div>
+                    <div className='bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6'>
+                      <dt className='flex justify-center items-center'>
+                        <p className='xl:text-2xl sm:text-lg text-base font-normal text-gray-500 text-center'>
+                          個人情報の取り扱い
+                        </p>
+                      </dt>
+                      <dd className='mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
+                        <p className='p-2 xl:text-2xl sm:text-lg text-base font-normal text-center'>
+                          <Link href='/wfc-works/privacy' passHref>
+                            プライバシーポリシー
+                          </Link>
                         </p>
                       </dd>
                     </div>
