@@ -67,7 +67,7 @@ const Body = ({ post }: { post: news }) => {
               </h1>
               <div
                 dangerouslySetInnerHTML={{ __html: post.body }}
-                className='xl:p-4 p-2 xl:text-2xl sm:text-lg text-base font-normal text-center'
+                className='prose lg:text-lg text-xs text-left break-all line-climp-1'
               />
             </div>
           </CardNoImage>
